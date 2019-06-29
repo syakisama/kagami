@@ -1,0 +1,193 @@
+/*
+Theme Name: kagami
+Theme URI: https://www.fli.moe
+Author: SCALA
+Author URI: https://www.fli.moe
+Description: Description
+Version: 2019
+*/
+
+/*--- normalize.css ---*/
+html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0;font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;color: #222;}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;outline: 0;text-decoration: none;color: #222;}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+ul{-webkit-margin-before:0;-webkit-margin-after: 0;-webkit-padding-start: 0;-moz-padding-start: 0;}
+
+/*--- kagami_grid ---*/
+.grid-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.grid-container *{
+	 box-sizing: border-box;
+}
+.clearfix:before,.clearfix:after.grid-container:before,.grid-container:after,.row:before,.row:after {
+	display: table;
+	content: " ";
+}
+.clearfix:after,.grid-container:after,.row:after {
+	clear: both;
+}
+[class*='col-'] {
+    position: relative;
+    float: left;
+    min-height: 1px;
+    padding:0 15px;
+}
+.col-12 {
+  width: 100%;
+}
+.col-11 {
+  width: 91.66666667%;
+}
+.col-10 {
+  width: 83.33333333%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-8 {
+  width: 66.66666667%;
+}
+.col-7 {
+  width: 58.33333333%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-5 {
+  width: 41.66666667%;
+}
+.col-4 {
+  width: 33.33333333%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-2 {
+  width: 16.66666667%;
+}
+.col-1 {
+  width: 8.33333333%;
+}
+/** kgm_style **/
+body{
+	background: #f4f5f7;
+	font-size: 15px;
+}
+.kgm-fl{
+	float: left;
+}
+.kgm-fr{
+	float: right;
+}
+.kam-nav-container ul{
+	list-style: none;
+	margin: 0;
+}
+.kam-nav-container .menu-item{
+	float: left;
+    text-align: center;
+    line-height: 42px;
+    height: 42px;
+    position: relative;
+	transition:all 0.5s;
+}
+.kam-nav-container .menu-item a{
+	color: #222;
+    height: 100%;
+    display: block;
+    padding: 0 7px;
+}
+.kam-nav-container .sub-menu{
+	position: absolute;
+    left: 0;
+    overflow: hidden;
+    background: hsla(0,0%,100%,.5);
+    border: 1px solid\9;
+    border-top: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,.16);
+    border-radius: 0 0 4px 4px;
+	/**display: none;**/
+	-webkit-padding-start: 0;
+}
+.kam-nav-container .sub-menu .menu-item{
+	display: block;
+	width: 100%;
+	text-align: left;
+}
+.kam-nav-container .sub-menu a{
+	display: block;
+    white-space: nowrap;
+    transition: all .2s;
+    overflow: hidden;
+    position: relative;
+    color: #222;
+}
+
+#kgm-header{
+	position: relative;
+	background: #fff;
+	color: #222;
+	margin: 0 auto;
+	-webkit-box-shadow: 0 1px 3px rgba(26,26,26,.1);
+	box-shadow: 0 1px 3px rgba(26,26,26,.1);
+}
+#kgm-header .kgm-header-bg{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 170px;
+	background-position: center;
+    background-repeat: no-repeat;
+}
+#kgm-header .kgm-primary-menu{
+	height: 42px;
+	width: 100%;
+	margin: 0 auto;
+	zoom: 1;
+	max-width: 100%;
+	position: relative;
+}
+#kgm-header .kgm-primary-menu-white{
+	background-color: hsla(0,0%,100%,.5);
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+#kgm-header .kgm-primary-menu-white .menu-item:hover{
+	background-color: hsla(0,0%,100%,.56);
+}
+#kgm-header .kgm-primary-menu .kgm-primary-menu-logo{
+	line-height: 42px;
+	float: left;
+	height: 100%;
+	margin: 0px;
+	position: relative;
+	font-size: 22px;
+	font-weight: 200;
+	display: none;
+}
+#kgm-header .kgm-primary-menu-button{
+	display: block;
+	height: 48px;
+	line-height: 42px;
+	text-align: center;
+	color: #fff;
+	background-color: #f45a8d;
+	border-radius: 0 0 6px 6px;
+	padding: 0 20px;
+	transition:all 0.5s;
+}
+#kgm-header .kgm-primary-menu-button:hover{
+	background-color: #fb7299;
+}
+#kgm-header .kgm-primary-menu-user{
+    width: 42px;
+    height: 42px;
+}
+#kgm-header .kgm-primary-menu-user img{
+    border: 0 solid #fff;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 50%;
+}
