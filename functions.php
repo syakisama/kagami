@@ -23,7 +23,7 @@ remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email');
 add_filter('show_admin_bar', '__return_false');
 
 /**移除wp_embed功能**/
-require_once(get_template_directory().'/include/functions/disable_wp_embed.php');
+require_once(get_template_directory().'/include/functions/disable-wp-embed/disable-wp-embed.php');
 
 /**菜单注册**/
 function kagm_register_menus() {
@@ -33,4 +33,6 @@ function kagm_register_menus() {
 	]);
 }
 add_action('after_setup_theme','kagm_register_menus');
+
+require_once(get_template_directory().'/include/functions/custom-navwalker/custom-navwalker.php');
 ?>
