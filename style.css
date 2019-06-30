@@ -80,6 +80,9 @@ body{
 .kgm-fr{
 	float: right;
 }
+.kgm-hide{
+	display: none;
+}
 .kam-nav-container ul{
 	list-style: none;
 	margin: 0;

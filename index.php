@@ -15,6 +15,8 @@
 						$args = array(
 							'theme_location'  => 'kgm-primary-menu-logout',
 							'container_class' => 'kam-nav-container kgm-fl',
+							'fallback_cb'     => 'custom_navwalker::fallback',
+							'walker'          => new custom_navwalker
 						);
 						wp_nav_menu($args);
 						unset($args);
