@@ -23,11 +23,11 @@ class ashuwp_framework_core {
   
   public function enqueue_css_js() {
     wp_enqueue_media();
-    wp_enqueue_style('ashuwp_framework_css', get_template_directory_uri(). '/include/ashuwp_framework/css/ashuwp_framework.css');
+    wp_enqueue_style('ashuwp_framework_css', get_template_directory_uri(). '/include/ashuwp-framework/css/ashuwp_framework.css');
     wp_enqueue_style( 'wp-color-picker' );
     wp_enqueue_script( 'wp-color-picker' );
     wp_enqueue_script( 'jquery-ui-tabs' );
-    wp_enqueue_script('ashuwp_framework_js', get_template_directory_uri(). '/include/ashuwp_framework/js/ashuwp_framework.js','','',true);
+    wp_enqueue_script('ashuwp_framework_js', get_template_directory_uri(). '/include/ashuwp-framework/js/ashuwp_framework.js','','',true);
     wp_localize_script( 'ashuwp_framework_js', 'ashu_file_preview', array('img_base'=>includes_url(),'img_path'=>$this->file_ico,'ajaxurl' => admin_url( 'admin-ajax.php' )));
   }
   

@@ -35,4 +35,6 @@ function kagm_register_menus() {
 add_action('after_setup_theme','kagm_register_menus');
 
 require_once(get_template_directory().'/include/functions/custom-navwalker/custom-navwalker.php');
+
+require_once(get_template_directory().'/include/ashuwp-framework/ashuwp_framework_core.php');
 ?>

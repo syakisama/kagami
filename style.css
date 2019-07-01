@@ -117,16 +117,17 @@ body{
 	display: block;
 	width: 100%;
 	text-align: left;
+	transition:all 0.5s;
 }
 .kam-nav-container .sub-menu a{
+	min-width: 120px;
 	display: block;
     white-space: nowrap;
-    transition: all .2s;
     overflow: hidden;
     position: relative;
     color: #222;
+    transition: all .2s;
 }
-
 #kgm-header{
 	position: relative;
 	background: #fff;
@@ -148,7 +149,7 @@ body{
 	position: absolute;
 	width: 100%;
 	height: 42px;
-	filter: blur(3px);
+	filter: blur(5px);
 	background-position: top;
     background-repeat: no-repeat;
 }
@@ -160,12 +161,32 @@ body{
 	max-width: 100%;
 	position: relative;
 }
+#kgm-header .kgm-primary-menu .sub-menu .menu-item a::before{
+	display: inline;
+    font: normal normal normal 14px/1 FontAwesome;
+	content: "\f105";
+	font-size: 16px;
+	font-weight: 600;
+	margin-right: 4px;
+}
+#kgm-header .kgm-primary-menu .sub-menu .menu-item a:hover{
+	padding-left: 14px;
+}
 #kgm-header .kgm-primary-menu-white{
 	background-color: hsla(0,0%,100%,.5);
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 #kgm-header .kgm-primary-menu-white .menu-item:hover{
 	background-color: hsla(0,0%,100%,.56);
+}
+#kgm-header .kgm-primary-menu-white .sub-menu .menu-item:hover{
+	background-color: #e5e9ef;
+}
+#kgm-header .kgm-primary-menu-white .sub-menu .menu-item a::before{
+	color: #20ABDD;
+}
+#kgm-header .kgm-primary-menu-white .sub-menu .menu-item{
+	background: #fff;
 }
 #kgm-header .kgm-primary-menu .kgm-primary-menu-logo{
 	line-height: 42px;
