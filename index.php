@@ -6,6 +6,7 @@
 <body>
 <header id="kgm-header" style="height: 170px;">
 	<div class="kgm-header-bg" style="background-image:url(https://s2.ax1x.com/2019/06/13/VhEcNQ.png);"></div>
+	<div class="kgm-header-bg-blur" style="background-image:url(https://s2.ax1x.com/2019/06/13/VhEcNQ.png);"></div>
 	<nav class="kgm-primary-menu kgm-primary-menu-white">
 		<div class="grid-container">
 			<div class="row">

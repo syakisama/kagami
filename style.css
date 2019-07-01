@@ -144,6 +144,14 @@ body{
 	background-position: center;
     background-repeat: no-repeat;
 }
+#kgm-header .kgm-header-bg-blur{
+	position: absolute;
+	width: 100%;
+	height: 42px;
+	filter: blur(3px);
+	background-position: top;
+    background-repeat: no-repeat;
+}
 #kgm-header .kgm-primary-menu{
 	height: 42px;
 	width: 100%;
