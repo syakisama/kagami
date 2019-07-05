@@ -15,8 +15,7 @@
 					if(has_nav_menu('kgm-primary-menu-logout')){
 						$args = array(
 							'theme_location'  => 'kgm-primary-menu-logout',
-							'container_class' => 'kam-nav-container kgm-fl',
-							'fallback_cb'     => 'custom_navwalker::fallback',
+							'container_class' => 'kgm-fl kgm-nav-container',
 							'walker'          => new custom_navwalker
 						);
 						wp_nav_menu($args);
@@ -31,8 +30,13 @@
 		</div>
 	</nav>
 </header>
-<div class="grid-container">
-123135
+<div id="kgm-app">
+	<div class="grid-container">
+		<div class="row">
+			<div class="col-12 col-md-8 kgm-main">1</div>
+			<div class="col-12 col-md-4 kgm-sidebar">2</div>
+		</div>
+	</div>
 </div>
 <?php get_footer(); ?>
 </body>

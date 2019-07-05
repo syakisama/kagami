@@ -69,6 +69,82 @@ ul{-webkit-margin-before:0;-webkit-margin-after: 0;-webkit-padding-start: 0;-moz
 .col-1 {
   width: 8.33333333%;
 }
+@media (min-width: 768px) {
+  .col-sm-12 {
+    width: 100%;
+  }
+  .col-sm-11 {
+    width: 91.66666667%;
+  }
+  .col-sm-10 {
+    width: 83.33333333%;
+  }
+  .col-sm-9 {
+    width: 75%;
+  }
+  .col-sm-8 {
+    width: 66.66666667%;
+  }
+  .col-sm-7 {
+    width: 58.33333333%;
+  }
+  .col-sm-6 {
+    width: 50%;
+  }
+  .col-sm-5 {
+    width: 41.66666667%;
+  }
+  .col-sm-4 {
+    width: 33.33333333%;
+  }
+  .col-sm-3 {
+    width: 25%;
+  }
+  .col-sm-2 {
+    width: 16.66666667%;
+  }
+  .col-sm-1 {
+    width: 8.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-12 {
+    width: 100%;
+  }
+  .col-md-11 {
+    width: 91.66666667%;
+  }
+  .col-md-10 {
+    width: 83.33333333%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-8 {
+    width: 66.66666667%;
+  }
+  .col-md-7 {
+    width: 58.33333333%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-5 {
+    width: 41.66666667%;
+  }
+  .col-md-4 {
+    width: 33.33333333%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-2 {
+    width: 16.66666667%;
+  }
+  .col-md-1 {
+    width: 8.33333333%;
+  }
+}
 /** kgm_style **/
 body{
 	background: #f4f5f7;
@@ -83,50 +159,52 @@ body{
 .kgm-hide{
 	display: none;
 }
-.kam-nav-container ul{
+.kgm-nav-container ul{
 	list-style: none;
 	margin: 0;
 }
-.kam-nav-container .menu-item{
+.kgm-nav-container .menu-item{
 	float: left;
-    text-align: center;
     line-height: 42px;
     height: 42px;
     position: relative;
-	transition:all 0.5s;
+    transition:all 0.5s;
 }
-.kam-nav-container .menu-item a{
+.kgm-nav-container .menu-item a{
 	color: #222;
     height: 100%;
     display: block;
     padding: 0 7px;
 }
-.kam-nav-container .sub-menu{
+.kgm-nav-container .sub-menu{
 	position: absolute;
     left: 0;
-    overflow: hidden;
     background: hsla(0,0%,100%,.5);
     border: 1px solid\9;
     border-top: 0;
     box-shadow: 0 2px 4px rgba(0,0,0,.16);
     border-radius: 0 0 4px 4px;
-	/**display: none;**/
+	display: none;
 	-webkit-padding-start: 0;
+	overflow: hidden;
 }
-.kam-nav-container .sub-menu .menu-item{
+.kgm-nav-container .sub-menu .menu-item{
+	min-width: 120px;
 	display: block;
 	width: 100%;
 	text-align: left;
 	transition:all 0.5s;
 }
-.kam-nav-container .sub-menu a{
-	min-width: 120px;
+.kgm-nav-container .sub-menu a{
+	width: 100%;
 	display: block;
     white-space: nowrap;
-    overflow: hidden;
     position: relative;
     color: #222;
     transition: all .2s;
+}
+.kgm-nav-container .sub-menu .sub-menu{
+	display: none;
 }
 #kgm-header{
 	position: relative;
@@ -222,4 +300,12 @@ body{
     height: 100%;
     padding: 5px;
     border-radius: 50%;
+}
+#kgm-app .kgm-main{
+	padding-left: 0;
+	padding-right: 6px;
+}
+#kgm-app .kgm-sidebar{
+	padding-left: 6px;
+	padding-right: 0;
 }
