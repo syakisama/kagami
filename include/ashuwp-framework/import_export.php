@@ -10,7 +10,7 @@ class ashuwp_option_import_class {
   function __construct($options) {
     $this->options = $options;
     
-    add_action( 'admin_menu', array(&$this, 'add_admin_menu') );
+    add_action( 'admin_menu', array( $this, 'add_admin_menu') );
     
     add_action( 'admin_init', array( $this, 'export' ) );
 		add_action( 'admin_init', array( $this, 'import' ) );

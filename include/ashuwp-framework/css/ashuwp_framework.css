@@ -102,7 +102,8 @@ html {
   margin-right:15px;
 }
 .ashuwp_field input.ashuwp_field_input,
-.ashuwp_field textarea.ashuwp_field_textarea {
+.ashuwp_field textarea.ashuwp_field_textarea,
+.ashuwp_field select.ashuwp_field_select{
   width:100%;
   max-width:500px;
 }

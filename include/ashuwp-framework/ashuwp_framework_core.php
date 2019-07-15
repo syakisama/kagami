@@ -24,6 +24,7 @@ class ashuwp_framework_core {
   public function enqueue_css_js() {
     wp_enqueue_media();
     wp_enqueue_style('ashuwp_framework_css', get_template_directory_uri(). '/include/ashuwp-framework/css/ashuwp_framework.css');
+    wp_enqueue_style('fontawesome_css', get_template_directory_uri(). '/static/css/font-awesome.min.css');
     wp_enqueue_style( 'wp-color-picker' );
     wp_enqueue_script( 'wp-color-picker' );
     wp_enqueue_script( 'jquery-ui-tabs' );
@@ -687,7 +688,12 @@ class ashuwp_framework_core {
     $file_view = '';
     
     if( $values['std'] != '' && !is_array($values['std']) ){
-      $file_view = '<img src="'.$this->get_file_ico($values['std']).'" />';
+      $is_fa=substr($values['std'],0,3);
+      if($is_fa && strtolower($is_fa)=='fa-'){
+        $file_view = '<i class ="fa '.$values['std'].'" style="font-size: 4em;"></i>';
+      }else{
+        $file_view = '<img src="'.$this->get_file_ico($values['std']).'" />';
+      }
     }
     
     if( !empty($values['multiple']) && $values['multiple'] === true ){
@@ -1142,4 +1148,4 @@ require __DIR__ .'/ashuwp_options_feild.php';
 require __DIR__ .'/ashuwp_postmeta_feild.php';
 require __DIR__ .'/ashuwp_termmeta_feild.php';
 require __DIR__ .'/ashuwp_quick_edit.php';
-//require __DIR__ .'/import_export.php';
+require __DIR__ .'/import_export.php';
