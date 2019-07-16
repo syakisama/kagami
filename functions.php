@@ -39,8 +39,9 @@ require_once(get_template_directory().'/include/functions/custom-navwalker/custo
 require_once(get_template_directory().'/include/ashuwp-framework/ashuwp_framework_core.php');
 require_once(get_template_directory().'/include/functions/theme-setting/theme-setting.php');
 
-function kgm_get_thumbnail_url(){
-    global $post;
+require_once(get_template_directory().'/include/functions/view-article-box/view-article-box.php');
+
+function kgm_get_thumbnail_url($post){
     if (has_post_thumbnail($post->ID)) {
         $post_thumbnail_id = get_post_thumbnail_id( $post );
         $img = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
