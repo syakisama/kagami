@@ -60,6 +60,7 @@ $kgm_option[] = array(
       'std'     => '',
       'subtype' => array(
         'card'  => '卡片视图',
+        'list'  => '列表视图',
       ),
     'type'     => 'select',
     'multiple' => false

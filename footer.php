@@ -8,6 +8,9 @@
 				memory_get_peak_usage() / 1024 / 1024
 			);
 			echo $stat;
+			echo '<br/>';
+			global $article_boxs;
+			var_dump($article_boxs);
 			?>
 		</div>
 	</div>
