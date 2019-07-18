@@ -57,4 +57,15 @@ function kgm_get_thumbnail_url($post){
     };
     return $img;
 }
+
+function kgm_get_excerpt($post){
+	if (has_excerpt($post->ID)){
+		return get_the_excerpt($post->ID);
+	}else{
+		if(!empty($post->post_content)){
+			return mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 200,"...");
+		}
+	}
+	return '';
+}
 ?>

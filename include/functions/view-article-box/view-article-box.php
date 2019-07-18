@@ -13,7 +13,11 @@ class kgm_view_article_box{
 					if(null == $article_box['icon']){
 						$article_box['icon'] = '';
 					}
-					self::the_card($article_box['category'], $article_box['icon'], $article_box['number'], $article_box['title']);
+					if($article_box['style'] == 'card'){
+						self::the_card($article_box['category'], $article_box['icon'], $article_box['number'], $article_box['title']);
+					}else{
+						self::the_list($article_box['category'], $article_box['icon'], $article_box['number'], $article_box['title']);
+					}
 				}
 			}
 		}else{
@@ -23,25 +27,60 @@ class kgm_view_article_box{
 	public static function the_card($category = 0, $icon = '', $number = 8, $title = ''){ ?>
 		<?php $posts = get_posts('category='.$category.'&numberposts='.$number); ?>
 		<?php if($posts): ?>
-			<div class="grid-container kgm-post-list">
-				<div class="kgm-post-list-header">
+			<div class="grid-container kgm-postlist">
+				<div class="kgm-postlist-header">
 					<?php if($title): ?>
-					<a class="kgm-post-list-title" href="<?php echo get_category_link($category)?>"><?php echo $title; ?></a>
+					<a class="kgm-postlist-title" href="<?php echo get_category_link($category)?>"><?php echo $title; ?></a>
 					<?php endif; ?>
-					<a class="kgm-post-list-more" href="<?php echo get_category_link($category)?>">更多<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<a class="kgm-postlist-more" href="<?php echo get_category_link($category)?>">更多<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 				</div>
 				<div class="row">
 					<?php foreach($posts as $post): setup_postdata($post); ?>
-						<div class="col-3 kgm-post-list-card">
-							<a class="kgm-post-list-card-link" href="<?php echo get_permalink($post->ID); ?>" title="<?php echo esc_html($post->post_title);?>">
-								<div class="kgm-post-list-card-img" style="background-image:url(<?php echo kgm_get_thumbnail_url($post); ?>);">
-									<div class="kgm-post-list-card-meta">
-										<div class="kgm-post-list-card-meta-view"><i class="fa fa-eye" aria-hidden="true"></i>12341</div>
-										<div class="kgm-post-list-card-meta-like"><i class="fa fa-heart-o" aria-hidden="true"></i>2141</div>
+						<div class="col-3 kgm-postlist-card">
+							<a class="kgm-postlist-card-link" href="<?php echo get_permalink($post->ID); ?>" title="<?php echo esc_html($post->post_title);?>">
+								<div class="kgm-postlist-card-img" style="background-image:url(<?php echo kgm_get_thumbnail_url($post); ?>);">
+									<div class="kgm-postlist-card-meta">
+										<div class="kgm-postlist-card-meta-view"><i class="fa fa-eye" aria-hidden="true"></i>12341</div>
+										<div class="kgm-postlist-card-meta-like"><i class="fa fa-heart-o" aria-hidden="true"></i>2141</div>
 									</div>
 								</div>
-								<div class="kgm-post-list-card-title"><?php echo $post->post_title;?></div>
+								<div class="kgm-postlist-card-title"><?php echo $post->post_title;?></div>
 							</a>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		<?php endif;
+	}
+	public static function the_list($category = 0, $icon = '', $number = 8, $title = ''){?>
+		<?php $posts = get_posts('category='.$category.'&numberposts='.$number); ?>
+		<?php if($posts): ?>
+			<div class="grid-container kgm-postlist">
+				<div class="kgm-postlist-header kgm-postlist-list-header">
+					<?php if($title): ?>
+					<a class="kgm-postlist-title" href="<?php echo get_category_link($category)?>"><?php echo $title; ?></a>
+					<?php endif; ?>
+					<a class="kgm-postlist-more" href="<?php echo get_category_link($category)?>">更多<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+				</div>
+				<div class="row">
+					<?php foreach($posts as $post): setup_postdata($post); ?>
+						<div class="col-12 kgm-postlist-list">
+							<div class="row">
+								<a class="col-3 kgm-postlist-list-img-link" href="<?php echo get_permalink($post->ID); ?>" title="<?php echo esc_html($post->post_title);?>">
+									<div class="kgm-postlist-list-img" style="background-image:url(<?php echo kgm_get_thumbnail_url($post); ?>);"></div>
+								</a>
+								<div class="col-9 kgm-postlist-list-right">
+									<a class="kgm-postlist-list-title" href="<?php echo get_permalink($post->ID); ?>" title="<?php echo esc_html($post->post_title);?>"><?php echo $post->post_title;?></a>
+									<div class="kgm-postlist-list-desc"><?php echo kgm_get_excerpt($post); ?></div>
+									<div class="kgm-postlist-list-meta">
+										<span class="kgm-postlist-list-meta-view"><i class="fa fa-eye"></i>12345</span>
+										<span class="kgm-postlist-list-meta-like"><i class="fa fa-heart-o"></i>1234</span>
+										<span class="kgm-postlist-list-meta-time"><i class="fa fa-clock-o"></i>1分钟前</span>
+										<span class="kgm-postlist-list-meta-author"><i class="fa fa-user"></i>Syakisama</span>
+									</div>
+								</div>
+							</div>
 						</div>
 					<?php endforeach; ?>
 				</div>
