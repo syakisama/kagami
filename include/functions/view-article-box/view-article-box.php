@@ -72,12 +72,12 @@ class kgm_view_article_box{
 								</a>
 								<div class="col-9 kgm-postlist-list-right">
 									<a class="kgm-postlist-list-title" href="<?php echo get_permalink($post->ID); ?>" title="<?php echo esc_html($post->post_title);?>"><?php echo $post->post_title;?></a>
-									<div class="kgm-postlist-list-desc"><?php echo kgm_get_excerpt($post); ?></div>
+									<div class="kgm-postlist-list-desc"><?php if(!post_password_required($post)){ echo kgm_get_excerpt($post); }?></div>
 									<div class="kgm-postlist-list-meta">
-										<span class="kgm-postlist-list-meta-view"><i class="fa fa-eye"></i>12345</span>
-										<span class="kgm-postlist-list-meta-like"><i class="fa fa-heart-o"></i>1234</span>
-										<span class="kgm-postlist-list-meta-time"><i class="fa fa-clock-o"></i>1分钟前</span>
-										<span class="kgm-postlist-list-meta-author"><i class="fa fa-user"></i>Syakisama</span>
+										<span class="kgm-postlist-list-meta-view"><i class="fa fa-eye" aria-hidden="true"></i>12345</span>
+										<span class="kgm-postlist-list-meta-like"><i class="fa fa-heart-o" aria-hidden="true"></i>1234</span>
+										<span class="kgm-postlist-list-meta-time"><i class="fa fa-clock-o" aria-hidden="true"></i>1分钟前</span>
+										<span class="kgm-postlist-list-meta-author"><i class="fa fa-user" aria-hidden="true"></i>Syakisama</span>
 									</div>
 								</div>
 							</div>
