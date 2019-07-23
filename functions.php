@@ -39,33 +39,5 @@ require_once(get_template_directory().'/include/functions/custom-navwalker/custo
 require_once(get_template_directory().'/include/ashuwp-framework/ashuwp_framework_core.php');
 require_once(get_template_directory().'/include/functions/theme-setting/theme-setting.php');
 
-require_once(get_template_directory().'/include/functions/view-article-box/view-article-box.php');
-
-function kgm_get_thumbnail_url($post){
-    if (has_post_thumbnail($post->ID)) {
-        $post_thumbnail_id = get_post_thumbnail_id( $post );
-        $img = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
-        $img = $img[0];
-    }else{
-        $content = $post->post_content;
-        preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
-        if (!empty($strResult[1])) {
-            $img = $strResult[1][0];
-        }else{
-            $img = 'https://img.pic-imges.com/pic/upload/vod/2019-01/15464435286.jpg';
-        }
-    };
-    return $img;
-}
-
-function kgm_get_excerpt($post){
-	if (has_excerpt($post->ID)){
-		return get_the_excerpt($post->ID);
-	}else{
-		if(!empty($post->post_content)){
-			return mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 200,"...");
-		}
-	}
-	return '';
-}
+require_once(get_template_directory().'/include/functions/view-post/view-post.php');
 ?>

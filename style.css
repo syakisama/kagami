@@ -335,6 +335,7 @@ ul {
 /** kgm_style **/
 body {
   font-size: 15px;
+  background: #f5f5f5;
 }
 
 .kgm-fl {
@@ -410,7 +411,6 @@ body {
   margin: 0 auto;
   -webkit-box-shadow: 0 1px 3px rgba(26,26,26,.1);
   box-shadow: 0 1px 3px rgba(26,26,26,.1);
-  margin-bottom: 10px;
 }
 
 #kgm-header .kgm-header-bg {
@@ -525,7 +525,7 @@ body {
   padding-right: 6px;
 }
 .kgm-postlist-header{
-  padding: 0 10px;
+  padding: 10px;
 }
 .kgm-postlist{
   margin: 10px 0;
@@ -562,14 +562,22 @@ body {
 .kgm-postlist .kgm-postlist-header .kgm-postlist-more:hover{
   background-color: #ccd0d7;
 }
-
-.kgm-postlist .kgm-postlist-card {
-  padding: 10px;
-  margin: 0;
+.kgm-postlist-card-contiainer{
+  padding: 0;
+  padding: 6px;
 }
-
+.kgm-postlist .kgm-postlist-card {
+  margin: 0;
+  background-color: #fff;
+  box-shadow: 0 0px 1px 0 rgba(0,0,0,.15);
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.kgm-postlist .kgm-postlist-card:hover{
+  box-shadow: 0 0px 3px 0 rgba(0,0,0,.3);
+}
 .kgm-postlist .kgm-postlist-card .kgm-postlist-card-img {
-  border-radius: 4px;
   overflow: hidden;
   width: 100%;
   height: 120px;
@@ -612,6 +620,7 @@ body {
   -webkit-line-clamp: 2;
   overflow: hidden;
   transition: all 0.3s;
+  padding: 6px;
 }
 .kgm-postlist .kgm-postlist-card .kgm-postlist-card-link:hover .kgm-postlist-card-title {
   color: #00a1d6;
@@ -623,11 +632,17 @@ body {
 }
 .kgm-postlist .kgm-postlist-list{
   padding: 10px;
+  margin: 4px 0;
   border-bottom: 1px solid #e5e9ef;
   width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0px 1px 0 rgba(0,0,0,.15);
+  transition: all 0.3s;
+}
+.kgm-postlist .kgm-postlist-list:hover{
+  box-shadow: 0 0px 3px 0 rgba(0,0,0,.3);
 }
 .kgm-postlist .kgm-postlist-list .kgm-postlist-list-img{
-  border-radius: 4px;
   overflow: hidden;
   width: 100%;
   height: 100px;
@@ -637,7 +652,7 @@ body {
 }
 .kgm-postlist .kgm-postlist-list .kgm-postlist-list-img-link{
   padding: 0;
-  padding-right: 15px;
+  padding-right: 10px;
 }
 .kgm-postlist .kgm-postlist-list .kgm-postlist-list-right{
   padding: 0;
@@ -664,15 +679,15 @@ body {
   font-size: 14px;
   line-height: 15px;
 }
-.kgm-postlist .kgm-postlist-list .kgm-postlist-list-right .kgm-postlist-list-meta{
+.kgm-postlist .kgm-postlist-list .kgm-postlist-list-right .kgm-postlist-list-meta span,
+.kgm-postlist .kgm-postlist-list .kgm-postlist-list-right .kgm-postlist-list-meta a{
   font-size: 14px;
   color: #99a2aa;
-}
-.kgm-postlist .kgm-postlist-list .kgm-postlist-list-right .kgm-postlist-list-meta span{
   margin-right: 4px;
   transition: all 0.3s;
 }
-.kgm-postlist .kgm-postlist-list .kgm-postlist-list-right .kgm-postlist-list-meta span:hover{
+.kgm-postlist .kgm-postlist-list .kgm-postlist-list-right .kgm-postlist-list-meta span:hover,
+.kgm-postlist .kgm-postlist-list .kgm-postlist-list-right .kgm-postlist-list-meta a:hover{
   color: #00a1d6;
 }
 .kgm-postlist .kgm-postlist-list .kgm-postlist-list-right .kgm-postlist-list-meta i{
@@ -684,4 +699,23 @@ body {
   background-color: #f6f9fa;
   color: #99a2aa;
   padding: 40px 0;
+}
+.kgm-post-content{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  padding: 10px;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+.kgm-post-content h2{
+  padding: 0 20px;
+  border-left: 5px solid #51aded;
+  background-color: rgba(243,243,243,.7);
+  font-size: 20px;
+  line-height: 40px;
+}
+.kgm-post-content img{
+  max-width: 100%;
 }

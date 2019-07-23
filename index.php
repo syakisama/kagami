@@ -7,7 +7,7 @@
 		?>
 		<div class="row">
 			<div class="col-8 kgm-main">
-				<?php kgm_view_article_box::show($article_boxs); ?>
+				<?php kgm_view_post::show_articlebox($article_boxs); ?>
 			</div>
 			<div class="col-4 kgm-sidebar">2</div>
 		</div>
