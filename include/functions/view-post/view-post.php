@@ -57,8 +57,9 @@ class kgm_view_post{
 						<a class="kgm-postlist-card-link" href="<?php echo get_permalink($post->ID); ?>" title="<?php echo esc_html($post->post_title);?>">
 							<div class="kgm-postlist-card-img" style="background-image:url(<?php echo self::kgm_get_thumbnail_url($post); ?>);">
 								<div class="kgm-postlist-card-meta">
-									<div class="kgm-postlist-card-meta-view"><i class="fa fa-eye" aria-hidden="true"></i>12341</div>
-									<div class="kgm-postlist-card-meta-like"><i class="fa fa-heart-o" aria-hidden="true"></i>2141</div>
+									<div class="kgm-postlist-card-meta-view"><i class="fa fa-play-circle-o" aria-hidden="true"></i>12341</div>
+									<div class="kgm-postlist-card-meta-like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>2141</div>
+									<div class="kgm-postlist-card-meta-author"><i class="fa fa-user" aria-hidden="true"></i><?php echo get_the_author_meta('nickname',$post->author); ?></div>
 								</div>
 							</div>
 							<div class="kgm-postlist-card-title"><?php echo $post->post_title;?></div>
@@ -80,9 +81,9 @@ class kgm_view_post{
 							<a class="kgm-postlist-list-title" href="<?php echo get_permalink($post->ID); ?>" title="<?php echo esc_html($post->post_title);?>"><?php echo $post->post_title;?></a>
 							<div class="kgm-postlist-list-desc"><?php if(!post_password_required($post)){ echo self::kgm_get_excerpt($post); }?></div>
 							<div class="kgm-postlist-list-meta">
-								<span class="kgm-postlist-list-meta-view"><i class="fa fa-eye" aria-hidden="true"></i>12345</span>
-								<span class="kgm-postlist-list-meta-like"><i class="fa fa-heart-o" aria-hidden="true"></i>1234</span>
-								<span class="kgm-postlist-list-meta-time"><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo $post->post_date; ?></span>
+								<span class="kgm-postlist-list-meta-view"><i class="fa fa-play-circle-o" aria-hidden="true"></i>12345</span>
+								<span class="kgm-postlist-list-meta-like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>1234</span>
+								<span class="kgm-postlist-list-meta-time"><i class="fa fa-clock-o" aria-hidden="true"></i><span class="kgm_timeago_render" datetime="<?php echo $post->post_date; ?>"></span></span>
 								<a class="kgm-postlist-list-meta-author" href="<?php echo get_the_author_meta('user_url',$post->author); ?>"><i class="fa fa-user" aria-hidden="true"></i><?php echo get_the_author_meta('nickname',$post->author); ?></a>
 							</div>
 						</div>
