@@ -9,15 +9,15 @@ $kgm_option_info = array(
 $kgm_option = array();
 /*-----------------------------------*/
 /*-----------------------------------*/
-$kgm_option[] = array(
-  'name' => '首页',
-  'id'   => 'kgm_option_home',
-  'type' => 'open',
-);
 
 $kgm_option[] = array(
-  'name'      => '文章盒子',
-  'id'        => 'kgm_option_article_box',
+  'name' => '显示',
+  'id'   => 'kgm_option_display',
+  'type' => 'open',
+);
+$kgm_option[] = array(
+  'name'      => '首页 - 文章盒子',
+  'id'        => 'kgm_home_article_box',
   'desc'      => '',
   'std'       => '',
   'multiple'  => true,

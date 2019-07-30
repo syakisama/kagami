@@ -40,5 +40,6 @@ require_once(get_template_directory().'/include/functions/custom-navwalker/custo
 require_once(get_template_directory().'/include/ashuwp-framework/ashuwp_framework_core.php');
 require_once(get_template_directory().'/include/functions/theme-setting/theme-setting.php');
 
+require_once(get_template_directory().'/include/widgets/widget-init.php');
 require_once(get_template_directory().'/include/functions/view-post/view-post.php');
 ?>

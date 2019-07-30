@@ -569,13 +569,13 @@ body {
 .kgm-postlist .kgm-postlist-card {
   margin: 0;
   background-color: #fff;
-  box-shadow: 0 0px 1px 0 rgba(0,0,0,.15);
+  box-shadow: 0 3px 10px rgba(0,0,0,.1);
   border-radius: 6px 6px 0 0;
   overflow: hidden;
   transition: all 0.3s;
 }
 .kgm-postlist .kgm-postlist-card:hover{
-  box-shadow: 0 0px 3px 0 rgba(0,0,0,.3);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 .kgm-postlist .kgm-postlist-card .kgm-postlist-card-img {
   overflow: hidden;
@@ -623,6 +623,7 @@ body {
   transition: all 0.3s;
   padding: 6px;
   line-height: 1.4;
+  height: 52px;
 }
 .kgm-postlist .kgm-postlist-card .kgm-postlist-card-link:hover .kgm-postlist-card-title {
   color: #00a1d6;
@@ -632,17 +633,20 @@ body {
   border-bottom: 1px solid #e5e9ef;
   padding-bottom: 10px;
 }
+.kgm-postlist .kgm-postlist-list-container{
+  padding: 6px;
+}
 .kgm-postlist .kgm-postlist-list{
   padding: 10px;
-  margin: 4px 0;
   border-bottom: 1px solid #e5e9ef;
   width: 100%;
   background-color: #fff;
-  box-shadow: 0 0px 1px 0 rgba(0,0,0,.15);
+  box-shadow: 0 3px 10px rgba(0,0,0,.1);
+  border-radius: 6px;
   transition: all 0.3s;
 }
 .kgm-postlist .kgm-postlist-list:hover{
-  box-shadow: 0 0px 3px 0 rgba(0,0,0,.3);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 .kgm-postlist .kgm-postlist-list .kgm-postlist-list-img{
   overflow: hidden;
@@ -659,9 +663,47 @@ body {
 .kgm-postlist .kgm-postlist-list .kgm-postlist-list-right{
   padding: 0;
 }
-#kgm-app .kgm-sidebar {
+#kgm-app .kgm-sidebar{
   padding-left: 6px;
   padding-right: 0;
+  margin: 10px 0;
+}
+.kgm-sidebar .kgm-widget{
+  margin: 10px 0;
+}
+.kgm-sidebar .kgm-widget .kgm-widget-title{
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: #99a2aa;
+  font-weight: 400;
+  font-size: 15px;
+  margin: 4px 0;
+}
+.kgm-sidebar .kgm-widget ul{
+  list-style: none;
+}
+.kgm-sidebar .kgm-widget ul{
+  border-bottom: 1px solid #e5e9ef;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,.1);
+  border-radius: 6px;
+}
+.kgm-sidebar .kgm-widget li{
+  padding: 10px 10px;
+  transition: all 0.3s;
+}
+.kgm-sidebar .kgm-widget li:nth-child(2n){
+  background-color: #f9f9f9;
+}
+.kgm-sidebar .kgm-widget li:hover{
+  background-color: #eeeeee;
+}
+.kgm-sidebar .kgm-widget a{
+  transition: all 0.3s;
+}
+.kgm-sidebar .kgm-widget a:hover {
+  color: #00a1d6;
 }
 .kgm-postlist .kgm-postlist-list .kgm-postlist-list-right .kgm-postlist-list-title{
   display: -webkit-box;
@@ -728,8 +770,12 @@ body {
   text-align: center;
   color: #99a2aa;
 }
+.kgm-post-content-header a,
+.kgm-post-content-header span{
+  padding: 0 4px;
+}
 .kgm-post-content-header i{
-  margin: 0 4px;
+  margin-right: 2px;
 }
 .kgm-post-content-header a{
   color: #99a2aa!important;
@@ -737,6 +783,9 @@ body {
 .kgm-post-content-header a:hover{
   color: #00a1d6!important;
   background-color: rgba(0,161,214,.1);
+}
+.kgm-post-content-header .kgm-post-content-header-category a{
+  padding: 0;
 }
 .kgm-post-content h2{
   display: inline-block;
@@ -756,6 +805,7 @@ body {
 }
 .kgm-post-content img{
   max-width: 100%;
+  vertical-align:middle;
 }
 .kgm-post-content pre{
   white-space: pre-wrap;
@@ -764,6 +814,7 @@ body {
 .kgm-post-content a{
   color: #00a1d6;
   transition: all 0.3s;
+  padding: 0;
 }
 .kgm-post-content a:hover {
   background-color: rgba(0,161,214,.1);

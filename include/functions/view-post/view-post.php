@@ -72,8 +72,8 @@ class kgm_view_post{
 	public static function the_list($posts){?>
 		<?php if($posts): ?>
 			<?php foreach($posts as $post): setup_postdata($post); ?>
-				<div class="col-12 kgm-postlist-list">
-					<div class="row">
+				<div class="col-6 kgm-postlist-list-container">
+					<div class="kgm-postlist-list row">
 						<a class="col-3 kgm-postlist-list-img-link" href="<?php echo get_permalink($post->ID); ?>" title="<?php echo esc_html($post->post_title);?>">
 							<div class="kgm-postlist-list-img" style="background-image:url(<?php echo self::kgm_get_thumbnail_url($post); ?>);"></div>
 						</a>
