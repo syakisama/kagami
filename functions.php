@@ -42,4 +42,25 @@ require_once(get_template_directory().'/include/functions/theme-setting/theme-se
 
 require_once(get_template_directory().'/include/widgets/widget-init.php');
 require_once(get_template_directory().'/include/functions/view-post/view-post.php');
+
+function simple_comment($comment, $args, $depth) {?>
+	<section id="kgm-comment-item-<?php echo $comment->comment_ID; ?>" class="grid-container kgm-comment-item">
+		<div class="kgm-comment-item-avatar">
+			<?php echo get_avatar($comment, 48, '', '', array('class'=>'kgm-comment-item-avatar-img')); ?>
+		</div>
+		<div class="kgm-comment-item-body">
+			<header class="kgm-comment-item-header">
+				<span class="kgm-comment-item-header-author"><?php echo $comment->comment_author; ?></span>
+				<date class="kgm_timeago_render kgm-comment-item-header-time" datetime="<?php echo $comment->comment_date; ?>"></date>
+				<?php comment_reply_link(array_merge( $args, array('reply_text' => '<i class="fa fa-comments-o" aria-hidden="true"></i>','depth' => $depth, 'max_depth' => $args['max_depth']))) ?> 
+			</header>
+			<div class="clearfix"></div>
+			<div class="kgm-comment-item-content">
+				<?php echo $comment->comment_content; ?>
+			</div>
+		</div>
+<!-- 		<?php var_dump($comment) ?> -->
+	</section>
+<?php
+}
 ?>

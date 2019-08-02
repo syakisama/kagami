@@ -16,6 +16,7 @@
 						<?php the_content(); ?>
 					<?php endif; ?>
 				</article>
+				<?php comments_template(); ?>
 			</div>
 			<div class="col-4 kgm-sidebar">2</div>
 		</div>
