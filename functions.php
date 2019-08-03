@@ -58,8 +58,14 @@ function simple_comment($comment, $args, $depth) {?>
 			<div class="kgm-comment-item-content">
 				<?php echo $comment->comment_content; ?>
 			</div>
+			<?php if($comment->comment_parent): $parent_comment=get_comment($comment->comment_parent);?>
+				<div class="gird-container kgm-comment-item-parent">
+					<a class="kgm-comment-item-parent-author">@<?php echo $parent_comment->comment_author; ?>:</a>
+					<span class="kgm-comment-item-parent-content"><?php echo $parent_comment->comment_content; ?></span>
+					<?php comment_reply_link(array_merge( $args, array('reply_text' => '<i class="fa fa-comments-o" aria-hidden="true"></i>','depth' => $depth, 'max_depth' => $args['max_depth'])),$parent_comment); ?> 
+				</div>
+			<?php endif; ?>				
 		</div>
-<!-- 		<?php var_dump($comment) ?> -->
 	</section>
 <?php
 }
