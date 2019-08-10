@@ -2,7 +2,7 @@
 <div id="kgm-app">
 	<div class="grid-container">
 		<div class="row">
-			<div class="col-8 kgm-main">
+			<div class="col-9 kgm-main">
 				<article class="kgm-post-content">
 					<h1 class="kgm-post-content-title"><?php echo $post->post_title; ?></h1>
 					<header class="kgm-post-content-header">
@@ -18,7 +18,7 @@
 				</article>
 				<?php comments_template(); ?>
 			</div>
-			<div class="col-4 kgm-sidebar">2</div>
+			<div class="col-3 kgm-sidebar">2</div>
 		</div>
 	</div>
 	<div class="clearfix"></div>

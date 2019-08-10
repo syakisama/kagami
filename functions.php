@@ -46,22 +46,27 @@ require_once(get_template_directory().'/include/functions/view-post/view-post.ph
 function simple_comment($comment, $args, $depth) {?>
 	<section id="kgm-comment-item-<?php echo $comment->comment_ID; ?>" class="grid-container kgm-comment-item">
 		<div class="kgm-comment-item-avatar">
-			<?php echo get_avatar($comment, 48, '', '', array('class'=>'kgm-comment-item-avatar-img')); ?>
+			<?php echo get_avatar($comment, 40, '', '', array('class'=>'kgm-comment-item-avatar-img')); ?>
 		</div>
 		<div class="kgm-comment-item-body">
 			<header class="kgm-comment-item-header">
 				<span class="kgm-comment-item-header-author"><?php echo $comment->comment_author; ?></span>
-				<date class="kgm_timeago_render kgm-comment-item-header-time" datetime="<?php echo $comment->comment_date; ?>"></date>
+				<?php if(!$comment->comment_parent==0): $parent_comment=get_comment($comment->comment_parent); ?>
+					<span class="kgm-comment-item-header-replyto"><i class="fa fa-share" aria-hidden="true"></i><?php echo $parent_comment->comment_author; ?></span>
+				<?php endif; ?>
+				<span class="kgm-comment-item-header-time"><i class="fa fa-clock-o" aria-hidden="true"></i><date class="kgm_timeago_render" datetime="<?php echo $comment->comment_date; ?>"></date></span>
 				<?php comment_reply_link(array_merge( $args, array('reply_text' => '<i class="fa fa-comments-o" aria-hidden="true"></i>','depth' => $depth, 'max_depth' => $args['max_depth']))) ?> 
 			</header>
 			<div class="clearfix"></div>
 			<div class="kgm-comment-item-content">
 				<?php echo $comment->comment_content; ?>
 			</div>
-			<?php if($comment->comment_parent): $parent_comment=get_comment($comment->comment_parent);?>
+			<?php if(!$comment->comment_parent==0): ?>
 				<div class="gird-container kgm-comment-item-parent">
-					<a class="kgm-comment-item-parent-author">@<?php echo $parent_comment->comment_author; ?>:</a>
-					<span class="kgm-comment-item-parent-content"><?php echo $parent_comment->comment_content; ?></span>
+					<div class="kgm-comment-item-parent-quote">
+						<a class="kgm-comment-item-parent-author">@<?php echo $parent_comment->comment_author; ?>:</a>
+						<span class="kgm-comment-item-parent-content"><?php echo $parent_comment->comment_content; ?></span>
+					</div>
 					<?php comment_reply_link(array_merge( $args, array('reply_text' => '<i class="fa fa-comments-o" aria-hidden="true"></i>','depth' => $depth, 'max_depth' => $args['max_depth'])),$parent_comment); ?> 
 				</div>
 			<?php endif; ?>				
@@ -69,4 +74,11 @@ function simple_comment($comment, $args, $depth) {?>
 	</section>
 <?php
 }
+function move_comment_field_to_bottom($fields) {
+	$comment_field = $fields['comment'];
+	unset( $fields['comment'] );
+	$fields['comment'] = $comment_field;
+	return $fields;
+}
+add_filter('comment_form_fields', 'move_comment_field_to_bottom');
 ?>

@@ -162,7 +162,6 @@ ul {
   -webkit-padding-start: 0;
   -moz-padding-start: 0;
 }
-
 /*--- kagami_grid ---*/
 .grid-container {
   width: 100%;
@@ -842,7 +841,18 @@ body {
 .kgm-post-content a:hover {
   background-color: rgba(0,161,214,.1);
 }
-#kgm-comment-container{
+#kgm-comment-container .kgm-comment-title{
+  font-size: 85%;
+  font-weight: 400;
+  color: #666;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin: .4rem 0;
+}
+#kgm-comment-container .kgm-comment-title i{
+  margin-right: 4px;
+}
+#kgm-comment-container .kgm-commentlist{
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,.1);
 }
@@ -862,7 +872,7 @@ body {
 #kgm-comment-container .kgm-comment-item .kgm-comment-item-avatar{
   position: relative;
   float: left;
-  width: 8%;
+  width: 7%;
 }
 #kgm-comment-container .kgm-comment-item .kgm-comment-item-avatar .kgm-comment-item-avatar-img{
   background: #fff;
@@ -872,7 +882,7 @@ body {
 #kgm-comment-container .kgm-comment-item .kgm-comment-item-body{
   position: relative;
   float: left;
-  width: 92%;
+  width: 93%;
   min-height: 48px;
 }
 #kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-header .kgm-comment-item-header-author{
@@ -881,18 +891,25 @@ body {
   background-color: rgba(0,161,214,.05);
   color: #00a1d6;
 }
-#kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-header .kgm-comment-item-header-time{
+#kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-header .kgm-comment-item-header-time,
+#kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-header .kgm-comment-item-header-replyto{
   color: #666;
+}
+#kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-header .kgm-comment-item-header-time i,
+#kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-header .kgm-comment-item-header-replyto i{
+  margin: 0 4px;
 }
 #kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-header .comment-reply-link{
   float: right;
-  padding: 2px 1rem;
   background-color: #f6f9fa;
   color: #00a1d6;
   border: 1px solid #e5e9ef;
-  border-radius: 1rem;
   overflow: hidden;
   transition: all 0.3s;
+  width: 10%;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
 }
 #kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-header .comment-reply-link i,
 #kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-parent .comment-reply-link i{
@@ -909,26 +926,24 @@ body {
 }
 #kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-parent{
   margin-top: 8px;
-  height: 30px;
-  line-height: 30px;
   background: rgba(0,0,0,.018);
   width: 100%;
   overflow: hidden;
   border-left: 2px solid rgba(0,0,0,.1);
 }
-#kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-parent .kgm-comment-item-parent-author{
+#kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-parent .kgm-comment-item-parent-quote{
   float: left;
-  padding: 0 10px;
+  width: 90%;
+  height: 30px;
+  padding-left: 4px;
+}
+#kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-parent .kgm-comment-item-parent-author{
   color: #00a1d6;
   transition: all 0.3s;
-  width: 10%;
-}
-#kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-parent .kgm-comment-item-parent-author:hover{
-  background-color: rgba(0,161,214,.05);
+  height: 30px;
+  line-height: 30px;
 }
 #kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-parent .kgm-comment-item-parent-content{
-  float: left;
-  width: 84%;
   height: 30px;
   word-wrap: break-word;
   word-break: break-all;
@@ -937,11 +952,14 @@ body {
 }
 #kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-parent .comment-reply-link{
   float: right;
-  width: 6%;
+  width: 10%;
+  height: 30px;
+  line-height: 30px;
   text-align: center;
   color: #00a1d6;
   transition: all 0.3s;
   border-left: 1px solid rgba(0,0,0,.05);
+
 }
 #kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-parent .comment-reply-link:hover{
   background-color: #00a1d6;

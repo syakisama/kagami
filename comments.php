@@ -5,6 +5,7 @@ if ( post_password_required() ) {
 ?>
 <div id="kgm-comment-container" class="kgm-comment-container">
 	<?php if ( have_comments() ) : ?>
+		<h2 class="kgm-comment-title"><i class="fa fa-comments" aria-hidden="true"></i>评论</h2>
 		<div class="kgm-commentlist">
 			<?php
 				wp_list_comments(array(
@@ -26,11 +27,10 @@ if ( post_password_required() ) {
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 	<?php endif; ?>
-	<?php 
+	<?php
 		$fields =  array(
-   			 'author' => '<div class="comment-form-author form-group has-feedback"><div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div><input class="form-control" placeholder="昵称" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" /><span class="form-control-feedback required">*</span></div></div>',
-   			 'email'  => '<div class="comment-form-email form-group has-feedback"><div class="input-group"><div class="input-group-addon"><i class="fa fa-envelope-o"></i></div><input class="form-control" placeholder="邮箱" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" /><span class="form-control-feedback required">*</span></div></div>',
-   			 'url'  => '<div class="comment-form-url form-group has-feedback"><div class="input-group"><div class="input-group-addon"><i class="fa fa-link"></i></div><input class="form-control" placeholder="网站" id="url" name="url" type="text" value="' . esc_attr(  $commenter['comment_author_url'] ) . '" size="30" /></div></div>',
+			'author' => '<div class="comment-form-author form-group has-feedback"><div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div><input class="form-control" placeholder="昵称" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" /><span class="form-control-feedback required">*</span></div></div>',
+			'email'  => '<div class="comment-form-email form-group has-feedback"><div class="input-group"><div class="input-group-addon"><i class="fa fa-envelope-o"></i></div><input class="form-control" placeholder="邮箱" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" /><span class="form-control-feedback required">*</span></div></div>'
 		);
 		$args = array(
 			'title_reply_before' => '<h4 id="reply-title" class="comment-reply-title">',
