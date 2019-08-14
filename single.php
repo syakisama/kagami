@@ -19,7 +19,10 @@
 				</article>
 				<?php comments_template(); ?>
 			</div>
-			<div class="col-3 kgm-sidebar">2</div>
+			<div class="col-3 kgm-sidebar">
+				<?php dynamic_sidebar('kgm-post-sidebar'); ?>
+			</div>
+			</div>
 		</div>
 	</div>
 	<div class="clearfix"></div>

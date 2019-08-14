@@ -18,22 +18,14 @@
 			<div class="clearfix"></div>
 			<div class="col-12">
 				<nav style="text-align: center;">
-				  <ul class="kgm-pagination" style="text-align: center;">
-				    <li class="kgm-pagination-item">
-				      <a href="#" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				      </a>
-				    </li>
-				    <li class="kgm-pagination-item"><a href="#">1</a></li>
-				    <li class="kgm-pagination-item"><a href="#">2</a></li>
+				  <ul class="kgm-pagination">
+				    <li class="kgm-pagination-item"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+				    <li class="kgm-pagination-item kgm-pagination-item-active"><a href="#">1</a></li>
+				    <li class="kgm-pagination-item kgm-pagination-item-disabled"><span href="#">2</span></li>
 				    <li class="kgm-pagination-item"><a href="#">3</a></li>
 				    <li class="kgm-pagination-item"><a href="#">4</a></li>
 				    <li class="kgm-pagination-item"><a href="#">5</a></li>
-				    <li class="kgm-pagination-item">
-				      <a href="#" aria-label="Next">
-				        <span aria-hidden="true">&raquo;</span>
-				      </a>
-				    </li>
+				    <li class="kgm-pagination-item"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
 				  </ul>
 				</nav>
 			</div>

@@ -7,7 +7,15 @@ function kgm_widgets_init(){
 		'after_widget' => '</aside>',
 		'before_title' => '<h2 class="kgm-widget-title">',
 		'after_title' => '</h2>'
-	)); 
+	));
+	register_sidebar(array(
+		'name' => '文章侧边栏',
+		'id' => 'kgm-post-sidebar',
+		'before_widget' => '<aside id="kgm-%1$s" class="kgm-widget kgm-%2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h2 class="kgm-widget-title">',
+		'after_title' => '</h2>'
+	));
 }
 add_action('widgets_init','kgm_widgets_init');
 function kgm_remove_default_widgets(){
