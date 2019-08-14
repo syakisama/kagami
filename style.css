@@ -344,7 +344,6 @@ body {
 .kgm-fr {
   float: right;
 }
-
 .kgm-hide {
   display: none;
 }
@@ -427,7 +426,7 @@ body {
   position: absolute;
   width: 100%;
   height: 42px;
-  filter: blur(5px);
+  filter: blur(3px);
   background-position: top;
   background-repeat: no-repeat;
 }
@@ -959,9 +958,57 @@ body {
   color: #00a1d6;
   transition: all 0.3s;
   border-left: 1px solid rgba(0,0,0,.05);
-
 }
 #kgm-comment-container .kgm-comment-item .kgm-comment-item-body .kgm-comment-item-parent .comment-reply-link:hover{
   background-color: #00a1d6;
+  color: #fff;
+}
+
+.kgm-search .kgm-search-header{
+  padding: 10px;
+}
+.kgm-search .kgm-search-header .kgm-search-header-title{
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+.kgm-search .kgm-search-header .kgm-search-header-title i{
+  margin-right: 4px;
+}
+.kgm-search .kgm-postlist{
+  margin: 0;
+  margin-bottom: 10px;
+}
+.kgm-search .kgm-postlist .kgm-postlist-card-contiainer{
+  width: 20%;
+}
+.kgm-pagination{
+  list-style: none;
+  display: block;
+}
+.kgm-pagination .kgm-pagination-item{
+  display: inline-block;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  margin: 0 2px;
+  transition: all 0.3s;
+}
+.kgm-pagination .kgm-pagination-item:hover,
+.kgm-pagination .kgm-pagination-item-active{
+  background: #00a1d6;
+  border: 1px solid #00a1d6;
+  color: #fff;
+}
+.kgm-pagination .kgm-pagination-item a{
+  transition: all 0.3s;
+}
+.kgm-pagination .kgm-pagination-item:hover a{
   color: #fff;
 }

@@ -32,14 +32,16 @@ class kgm_view_post{
 	}
 	public static function the_postlist_start($title = '', $icon = '', $more_link = ''){?>
 		<div class="grid-container kgm-postlist">
-			<div class="kgm-postlist-header">
-				<?php if($title): ?>
-					<a class="kgm-postlist-title" href="<?php echo $more_link; ?>"><?php echo $title; ?></a>
-				<?php endif; ?>
-				<?php if($more_link): ?>
-					<a class="kgm-postlist-more" href="<?php echo $more_link; ?>">更多<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-				<?php endif; ?>
-			</div>
+			<?php if($title || $icon || $more_link): ?>
+				<header class="kgm-postlist-header">
+					<?php if($title): ?>
+						<a class="kgm-postlist-title" href="<?php echo $more_link; ?>"><?php echo $title; ?></a>
+					<?php endif; ?>
+					<?php if($more_link): ?>
+						<a class="kgm-postlist-more" href="<?php echo $more_link; ?>">更多<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<?php endif; ?>
+				</header>
+			<?php endif;?>
 			<div class="row">
 	<?php
 	}
@@ -58,7 +60,7 @@ class kgm_view_post{
 							<div class="kgm-postlist-card-img" style="background-image:url(<?php echo self::kgm_get_thumbnail_url($post); ?>);">
 								<div class="kgm-postlist-card-meta">
 									<div class="kgm-postlist-card-meta-view"><i class="fa fa-play-circle-o" aria-hidden="true"></i>12341</div>
-									<div class="kgm-postlist-card-meta-like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>2141</div>
+									<div class="kgm-postlist-card-meta-comment"><i class="fa fa-comments-o" aria-hidden="true"></i><?php echo $post->comment_count; ?></div>
 									<div class="kgm-postlist-card-meta-author"><i class="fa fa-user" aria-hidden="true"></i><?php echo get_the_author_meta('nickname',$post->author); ?></div>
 								</div>
 							</div>
@@ -82,7 +84,7 @@ class kgm_view_post{
 							<div class="kgm-postlist-list-desc"><?php if(!post_password_required($post)){ echo self::kgm_get_excerpt($post); }?></div>
 							<div class="kgm-postlist-list-meta">
 								<span class="kgm-postlist-list-meta-view"><i class="fa fa-play-circle-o" aria-hidden="true"></i>12345</span>
-								<span class="kgm-postlist-list-meta-like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>1234</span>
+								<span class="kgm-postlist-list-meta-comment"><i class="fa fa-comments-o" aria-hidden="true"></i><?php echo $post->comment_count; ?></span>
 								<span class="kgm-postlist-list-meta-time"><i class="fa fa-clock-o" aria-hidden="true"></i><span class="kgm_timeago_render" datetime="<?php echo $post->post_date; ?>"></span></span>
 								<a class="kgm-postlist-list-meta-author" href="<?php echo get_the_author_meta('user_url',$post->author); ?>"><i class="fa fa-user" aria-hidden="true"></i><?php echo get_the_author_meta('nickname',$post->author); ?></a>
 							</div>
@@ -117,6 +119,16 @@ class kgm_view_post{
 			}
 		};
 		return $img;
+	}
+	public static function kgm_pages($paged, $wp_query, $max_page, $range = 5){
+		if (!$max_page){
+			$max_page = $wp_query->max_num_pages;
+		}
+		if($max_page > 1){
+
+		}else{
+
+		}
 	}
 }
 ?>

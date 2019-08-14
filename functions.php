@@ -52,7 +52,7 @@ function simple_comment($comment, $args, $depth) {?>
 			<header class="kgm-comment-item-header">
 				<span class="kgm-comment-item-header-author"><?php echo $comment->comment_author; ?></span>
 				<?php if(!$comment->comment_parent==0): $parent_comment=get_comment($comment->comment_parent); ?>
-					<span class="kgm-comment-item-header-replyto"><i class="fa fa-share" aria-hidden="true"></i><?php echo $parent_comment->comment_author; ?></span>
+					<span class="kgm-comment-item-header-replyto"><i class="fa fa-at" aria-hidden="true"></i><?php echo $parent_comment->comment_author; ?></span>
 				<?php endif; ?>
 				<span class="kgm-comment-item-header-time"><i class="fa fa-clock-o" aria-hidden="true"></i><date class="kgm_timeago_render" datetime="<?php echo $comment->comment_date; ?>"></date></span>
 				<?php comment_reply_link(array_merge( $args, array('reply_text' => '<i class="fa fa-comments-o" aria-hidden="true"></i>','depth' => $depth, 'max_depth' => $args['max_depth']))) ?> 
@@ -64,7 +64,7 @@ function simple_comment($comment, $args, $depth) {?>
 			<?php if(!$comment->comment_parent==0): ?>
 				<div class="gird-container kgm-comment-item-parent">
 					<div class="kgm-comment-item-parent-quote">
-						<a class="kgm-comment-item-parent-author">@<?php echo $parent_comment->comment_author; ?>:</a>
+						<a class="kgm-comment-item-parent-author"><i class="fa fa-at" aria-hidden="true"></i><?php echo $parent_comment->comment_author; ?>:</a>
 						<span class="kgm-comment-item-parent-content"><?php echo $parent_comment->comment_content; ?></span>
 					</div>
 					<?php comment_reply_link(array_merge( $args, array('reply_text' => '<i class="fa fa-comments-o" aria-hidden="true"></i>','depth' => $depth, 'max_depth' => $args['max_depth'])),$parent_comment); ?> 
