@@ -120,15 +120,106 @@ class kgm_view_post{
 		};
 		return $img;
 	}
-	public static function kgm_pages($paged, $wp_query, $max_page, $range = 5){
+	public static function kgm_pages($paged, $wp_query, $max_page, $range = 3){
 		if (!$max_page){
 			$max_page = $wp_query->max_num_pages;
 		}
-		if($max_page > 1){
-
-		}else{
-
+		if($max_page > 0){
+			if(!$paged){$paged = 1;}
+			echo '<ul class="kgm-pagination">';
+			//prev
+			if($paged > 1){
+				self::kgm_pages_button('prev','default',0,get_pagenum_link($paged-1));
+			}else{
+				self::kgm_pages_button('prev','disabled');
+			}
+			//num
+			if($max_page > ($range * 2 + 1)){
+				if($paged > ($range + 2)){
+					self::kgm_pages_button('num','default',1,get_pagenum_link(1));
+					self::kgm_pages_button('ellipsis');
+				}
+				if($paged <= $range){
+					for($i = 1; $i <= ($range * 2 + 1); $i++){
+						if($paged == $i){
+							self::kgm_pages_button('num','active',$i);
+						}else{
+							self::kgm_pages_button('num','default',$i,get_pagenum_link($i));
+						}
+					}
+				}else{
+					if($paged <= ($max_page - $range)){
+						for($i = ($paged - $range); $i <= ($paged + $range); $i++){
+							if($paged == $i){
+								self::kgm_pages_button('num','active',$i);
+							}else{
+								self::kgm_pages_button('num','default',$i,get_pagenum_link($i));
+							}
+						}
+					}else{
+						for($i = ($max_page - $range*2); $i <= $max_page; $i++){
+							if($paged == $i){
+								self::kgm_pages_button('num','active',$i);
+							}else{
+								self::kgm_pages_button('num','default',$i,get_pagenum_link($i));
+							}
+						}
+					}
+				}
+				if($paged < ($max_page - $range - 1)){
+					self::kgm_pages_button('ellipsis');
+					self::kgm_pages_button('num','default',$max_page,get_pagenum_link($max_page));
+				}
+			}else{
+				for($i = 1; $i <= $max_page; $i++){
+					if($paged == $i){
+						self::kgm_pages_button('num','active',$i);
+					}else{
+						self::kgm_pages_button('num','default',$i,get_pagenum_link($i));
+					}
+				}
+			}
+			//next
+			if($paged < $max_page){
+				self::kgm_pages_button('next','default',0,get_pagenum_link($paged+1));
+			}else{
+				self::kgm_pages_button('next','disabled');
+			}
+			echo '</ul>';
 		}
+	}
+	static function kgm_pages_button($type = 'num', $stat = 'default', $num = 0, $link = ''){
+		if($type == 'ellipsis'){
+			echo '<li class="kgm-pagination-ellipsis"></li>';
+			return;
+		}
+
+		$class = 'kgm-pagination-item';
+		if($stat == 'active'){
+			$class = $class.' kgm-pagination-item-active';
+		}elseif($stat == 'disabled'){
+			$class = $class.' kgm-pagination-item-disabled';
+		}
+		echo '<li ';
+		echo 'class="'.$class.'">';
+
+		if($type == 'prev'){
+			$title = '上一页';
+			$text = '&laquo;';
+		}elseif($type == 'next'){
+			$title = '下一页';
+			$text = '&raquo;';
+		}elseif($type == 'num'){
+			$title = '第'.$num.'页';
+			$text = $num;
+		}
+
+		if(!empty($link)){
+			echo '<a href="'.$link.'" title="'.$title.'">'.$text.'</a>';
+		}else{
+			echo '<span title="'.$title.'">'.$text.'</span>';
+		}
+		echo '</li>';
 	}
 }
 ?>
