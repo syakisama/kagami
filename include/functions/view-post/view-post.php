@@ -135,10 +135,6 @@ class kgm_view_post{
 			}
 			//num
 			if($max_page > ($range * 2 + 1)){
-				if($paged > ($range + 2)){
-					self::kgm_pages_button('num','default',1,get_pagenum_link(1));
-					self::kgm_pages_button('ellipsis');
-				}
 				if($paged <= $range){
 					for($i = 1; $i <= ($range * 2 + 1); $i++){
 						if($paged == $i){
@@ -165,10 +161,6 @@ class kgm_view_post{
 							}
 						}
 					}
-				}
-				if($paged < ($max_page - $range - 1)){
-					self::kgm_pages_button('ellipsis');
-					self::kgm_pages_button('num','default',$max_page,get_pagenum_link($max_page));
 				}
 			}else{
 				for($i = 1; $i <= $max_page; $i++){
@@ -205,10 +197,10 @@ class kgm_view_post{
 
 		if($type == 'prev'){
 			$title = '上一页';
-			$text = '&laquo;';
+			$text = '<i class="fa fa-angle-double-left" aria-hidden="true"></i>';
 		}elseif($type == 'next'){
 			$title = '下一页';
-			$text = '&raquo;';
+			$text = '<i class="fa fa-angle-double-right" aria-hidden="true"></i>';
 		}elseif($type == 'num'){
 			$title = '第'.$num.'页';
 			$text = $num;

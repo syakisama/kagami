@@ -17,7 +17,7 @@
 			<div class="clearfix"></div>
 			<div class="col-12">
 				<nav class="kgm-search-pagination">
-					<?php kgm_view_post::kgm_pages($paged, $wp_query, null, 2); ?>
+					<?php kgm_view_post::kgm_pages($paged, $wp_query, null, 3); ?>
 				</nav>
 			</div>
 		</div>
