@@ -2,11 +2,11 @@
 <div id="kgm-app">
 	<div class="grid-container">
 		<div class="row">
-			<div class="col-12 kgm-main kgm-search">
-				<header class="kgm-search-header">
-					<h2 class="kgm-search-header-title"><i class="fa fa-search" aria-hidden="true"></i>搜索</h2>
+			<div class="col-12 kgm-main kgm-archive">
+				<header class="kgm-archive-header">
+					<h2 class="kgm-archive-header-title"><i class="fa fa-search" aria-hidden="true"></i>搜索</h2>
 					<?php global $wp_query;?>
-					<span class="kgm-search-header-count">关键词[<?php echo(esc_html($wp_query->query_vars['s']));?>]共找到<?php echo $wp_query->found_posts; ?>个结果</span>
+					<span class="kgm-archive-header-count">关键词[<?php echo(esc_html($wp_query->query_vars['s']));?>]共找到<?php echo $wp_query->found_posts; ?>个结果</span>
 				</header>
 				<?php if(have_posts()): ?>
 					<?php kgm_view_post::the_postlist_start(); ?>
@@ -16,7 +16,7 @@
 			</div>
 			<div class="clearfix"></div>
 			<div class="col-12">
-				<nav class="kgm-search-pagination">
+				<nav class="kgm-archive-pagination">
 					<?php kgm_view_post::kgm_pages($paged, $wp_query, null, 3); ?>
 				</nav>
 			</div>

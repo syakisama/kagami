@@ -3,9 +3,12 @@ define('kgm_version', '2019');
 /**加载css及javascript**/
 function kgm_scripts(){
 	wp_enqueue_style('kgm_awesome','https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css',array(),'4.7.0');
+	wp_enqueue_style('kgm_nprogress','https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css',array(),'0.2.0');
 	wp_enqueue_style('kgm_style',get_template_directory_uri().'/style.css',array(),kgm_version);
 	wp_enqueue_script('kgm_jquery','https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js',array(),'3.3.1',true);
 	wp_enqueue_script('kgm_timeago','https://cdn.jsdelivr.net/npm/timeago.js@4.0.0-beta.2/dist/timeago.min.js',array(),'4.0.0',true);
+	wp_enqueue_script('kgm_nprogress','https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js',array(),'0.2.0',true);
+	wp_enqueue_script('kgm_pjax',get_template_directory_uri().'/static/js/pjax.js',array(),kgm_version,true);
 	wp_enqueue_script('kgm_app',get_template_directory_uri().'/static/js/app.js',array(),kgm_version,true);
 	wp_dequeue_style('wp-block-library');
 }

@@ -496,7 +496,8 @@ body {
   margin: 0 auto;
   zoom: 1;
   max-width: 100%;
-  position: relative;
+  position: fixed;
+  z-index: 999;
 }
 
 #kgm-header .kgm-primary-menu .sub-menu .menu-item a::before {
@@ -938,6 +939,7 @@ body {
 
 .kgm-post-content img {
   max-width: 100%;
+  height: auto;
   vertical-align: middle;
 }
 
@@ -1101,11 +1103,11 @@ body {
   color: #fff;
 }
 
-.kgm-search .kgm-search-header {
+.kgm-archive .kgm-archive-header {
   padding: 10px;
 }
 
-.kgm-search .kgm-search-header .kgm-search-header-title {
+.kgm-archive .kgm-archive-header .kgm-archive-header-title {
   margin-block-start: 0;
   margin-block-end: 0;
   font-size: 1.5em;
@@ -1113,20 +1115,20 @@ body {
   margin-bottom: 6px;
 }
 
-.kgm-search .kgm-search-header .kgm-search-header-title i {
+.kgm-archive .kgm-archive-header .kgm-archive-header-title i {
   margin-right: 4px;
 }
 
-.kgm-search .kgm-postlist {
+.kgm-archive .kgm-postlist {
   margin: 0;
   margin-bottom: 10px;
 }
 
-.kgm-search .kgm-postlist .kgm-postlist-card-contiainer {
+.kgm-archive .kgm-postlist .kgm-postlist-card-contiainer {
   width: 20%;
 }
 
-.kgm-search-pagination{
+.kgm-archive-pagination{
   margin: 10px 0;
   text-align: center;
 }
