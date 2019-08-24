@@ -1,8 +1,8 @@
 <?php
 class kgm_view_post{
-	public static function show_articlebox($article_boxs){
-		if(is_array($article_boxs) && count($article_boxs) > 0){
-			foreach($article_boxs as $article_box){
+	public static function show_articlebox($articleboxs){
+		if(is_array($articleboxs) && count($articleboxs) > 0){
+			foreach($articleboxs as $article_box){
 				if(!null == $article_box['category'] && !empty($article_box['category']) && $article_box['category'] > 0){
 					$more_link = get_category_link($article_box['category']);
 					if(null == $article_box['number'] || empty($article_box['number']) || $article_box['number'] < 1){
@@ -180,7 +180,7 @@ class kgm_view_post{
 			echo '</ul>';
 		}
 	}
-	static function kgm_pages_button($type = 'num', $stat = 'default', $num = 0, $link = ''){
+	private static function kgm_pages_button($type = 'num', $stat = 'default', $num = 0, $link = ''){
 		if($type == 'ellipsis'){
 			echo '<li class="kgm-pagination-ellipsis"></li>';
 			return;

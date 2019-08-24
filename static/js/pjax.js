@@ -885,15 +885,3 @@ $.support.pjax =
 $.support.pjax ? enable() : disable()
 
 })(jQuery);
-
-$(function() {
-$(document).pjax('a[target!=_blank]', '#kgm-app', {fragment:'#kgm-app', timeout:6000});    
-	$(document).on('pjax:send', function() {
-		NProgress.start();
-		$('#kgm-app').fadeTo(200,0.0);
-	});
-	$(document).on('pjax:complete', function() {
-		$('#kgm-app').fadeTo(200,1);
-		NProgress.done();
-	});
-});
