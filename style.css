@@ -1132,3 +1132,80 @@ body {
   margin: 10px 0;
   text-align: center;
 }
+/*----------dialog----------*/
+.kgm-dialog-overlay{
+  background: rgba(0,0,0,.65);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  z-index: 1500;
+}
+.kgm-dialog{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1500;
+}
+.kgm-dialog .kgm-dialog-container{
+  position: relative;
+  background-color: rgb(246,246,246);
+  max-height: 100%;
+  max-width: 80vw;
+  box-shadow: 0 10px 50px rgba(0,0,0,.5);
+  pointer-events: auto;
+  z-index: 1500;
+}
+.kgm-dialog .kgm-dialog-container .kgm-dialog-header{
+  height: 3rem;
+  line-height: 3rem;
+  background-color: rgb(0,0,0,.015);
+}
+.kgm-dialog .kgm-dialog-container .kgm-dialog-header .kgm-dialog-header-title{
+  float: left;
+  width: 92%;
+}
+.kgm-dialog .kgm-dialog-container .kgm-dialog-header .kgm-dialog-header-title>.fa{
+  margin: 4px;
+}
+.kgm-dialog .kgm-dialog-container .kgm-dialog-header .kgm-dialog-header-close{
+  float: right;
+  width: 8%;
+  text-align: center;
+  background-color: rgb(0,0,0,.02);
+}
+.kgm-dialog .kgm-dialog-container .kgm-dialog-header .kgm-dialog-header-close{
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.kgm-dialog .kgm-dialog-container .kgm-dialog-content{
+  padding: .5rem .5rem;
+  overflow: auto;
+  word-wrap: break-word;
+  word-break: break-all;
+  max-height: calc(100vh - 8rem);
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+.kgm-dialog .kgm-dialog-container .kgm-dialog-content::-webkit-scrollbar{
+  display: none;
+}
+.kgm-dialog .kgm-dialog-container .kgm-dialog-footer{
+  height: 2rem;
+  line-height: 2rem;
+}
+.kgm-dialog .kgm-dialog-container .kgm-dialog-header .kgm-dialog-header-close:hover{
+  background-color: #00a1d6;
+  color: #fff;
+}
+.kgm-dialog .kgm-text-color-gray{
+  color: #666;
+}

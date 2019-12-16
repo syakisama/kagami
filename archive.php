@@ -8,6 +8,12 @@
 						<h2 class="kgm-archive-header-title"><?php echo single_cat_title('', false); ?></h2>
 					<?php elseif(is_tag()): ?>
 						<h2 class="kgm-archive-header-title"><i class="fa fa-tag" aria-hidden="true"></i><?php echo single_cat_title('', false); ?></h2>
+					<?php elseif(is_day()): ?>
+						<h2 class="kgm-archive-header-title">文章归档: <?php echo get_the_date() ?></h2>
+					<?php elseif(is_month()): ?>
+						<h2 class="kgm-archive-header-title">文章归档: <?php echo get_the_date('Y年M'); ?></h2>
+					<?php elseif(is_year()): ?>
+						<h2 class="kgm-archive-header-title">文章归档: <?php echo get_the_date('Y年'); ?></h2>
 					<?php endif; ?>
 				</header>
 				<?php if(have_posts()): ?>
